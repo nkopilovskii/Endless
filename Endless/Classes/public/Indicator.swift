@@ -25,6 +25,7 @@ public final class Indicator: UIView, IndicatorProtocol {
     
     public func setup(with configuration: Configuration) {
         self.configuration = configuration
+        backgroundColor = .clear
         setupConstraints()
         setupInitialSelection()
         updateCells()
