@@ -9,7 +9,6 @@ public final class Indicator: UIView, IndicatorProtocol {
         collectionView.backgroundColor = .clear
         collectionView.allowsMultipleSelection = false
         (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
-        collectionView.backgroundColor = UIColor.white
         collectionView.register(IndicatorCell.self, forCellWithReuseIdentifier: Constants.indicatorCellReuseIdentifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isUserInteractionEnabled = false
@@ -48,11 +47,11 @@ extension Indicator {
         collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        let spacing = CGFloat(configuration.maxNumberOfDots.rawValue - 1) * configuration.spacing
+        let spacing = CGFloat(configuration.maxNumberOfDots - 1) * configuration.spacing
         let widthOfItem = configuration.dotSize
         let heightOfItem = configuration.dotSize
         heightAnchor.constraint(equalToConstant: heightOfItem).isActive = true
-        widthAnchor.constraint(equalToConstant: CGFloat(configuration.maxNumberOfDots.rawValue) * widthOfItem + spacing).isActive = true
+        widthAnchor.constraint(equalToConstant: CGFloat(configuration.maxNumberOfDots) * widthOfItem + spacing).isActive = true
         setNeedsLayout()
         layoutIfNeeded()
     }
@@ -117,25 +116,24 @@ extension Indicator {
         
         let selectedIndexPath = IndexPath(row: selectedIndex, section: 0)
         self.collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredHorizontally)
+        updateCells()
     }
     
     private func updateCells() {
-        guard let configuration = configuration else {
-            return
-        }
+        guard configuration != nil else { return }
         
         let cellAndPaths = collectionView.getAllVisibleCellsAndPaths()
         
-        for (index,cellAndPath) in cellAndPaths.enumerated() {
+        for (_,cellAndPath) in cellAndPaths.enumerated() {
             // Update the cell at the selected index
             if cellAndPath.indexPath.row == selectedIndex {
                 cellAndPath.cell.update(state: .selected)
-            } else if cellAndPath.indexPath.row == 0 || cellAndPath.indexPath.row == configuration.numberOfDots - 1 {
-                cellAndPath.cell.update(state: .unselected)
-            } else if index == 0 || index == cellAndPaths.count - 1 {
-                cellAndPath.cell.update(state: .small)
+            } else if abs(cellAndPath.indexPath.row - selectedIndex) == 1 {
+              cellAndPath.cell.update(state: .unselected)
+            } else if abs(cellAndPath.indexPath.row - selectedIndex) == 2 {
+              cellAndPath.cell.update(state: .medium)
             } else {
-                cellAndPath.cell.update(state: .unselected)
+              cellAndPath.cell.update(state: .small)
             }
         }
     }

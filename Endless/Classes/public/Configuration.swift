@@ -2,14 +2,14 @@ import Foundation
 
 public struct Configuration {
     let numberOfDots: Int
-    let maxNumberOfDots: MaxNumberOfDots
+    let maxNumberOfDots: UInt
     let selectedDotColor: UIColor
     let unselectedDotColor: UIColor
     let dotSize: CGFloat
     let spacing: CGFloat
     
     public init(numberOfDots: Int,
-                maxNumberOfDots: MaxNumberOfDots,
+                maxNumberOfDots: UInt,
                 selectedDotColor: UIColor,
                 unselectedDotColor: UIColor,
                 dotSize: CGFloat,

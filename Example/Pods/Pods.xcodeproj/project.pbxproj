@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		013D0177EA6830764D89FE8470DF9553 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		1502BA9C2259F81C0013A149 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502BA9B2259F81C0013A149 /* CALayer+Extension.swift */; };
-		1502BA9E2259FD5B0013A149 /* MaxNumberOfDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502BA9D2259FD5B0013A149 /* MaxNumberOfDots.swift */; };
 		1502BAA0225A041F0013A149 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502BA9F225A041F0013A149 /* Constants.swift */; };
 		1502BAA2225A057A0013A149 /* UICollectionView+VisibleCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502BAA1225A057A0013A149 /* UICollectionView+VisibleCells.swift */; };
 		159A805A225A074E0046B195 /* IndicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159A8059225A074E0046B195 /* IndicatorProtocol.swift */; };
@@ -48,7 +47,6 @@
 /* Begin PBXFileReference section */
 		115F58AB98EAA756EDD74A5C3C10BF99 /* IndicatorCellState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IndicatorCellState.swift; sourceTree = "<group>"; };
 		1502BA9B2259F81C0013A149 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
-		1502BA9D2259FD5B0013A149 /* MaxNumberOfDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxNumberOfDots.swift; sourceTree = "<group>"; };
 		1502BA9F225A041F0013A149 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1502BAA1225A057A0013A149 /* UICollectionView+VisibleCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+VisibleCells.swift"; sourceTree = "<group>"; };
 		159A8059225A074E0046B195 /* IndicatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorProtocol.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				B3BA0250867B64346D973B40D6914796 /* Indicator.swift */,
 				159A8059225A074E0046B195 /* IndicatorProtocol.swift */,
 				DC00CF88448BFE2EC07228B8F5578EF0 /* Configuration.swift */,
-				1502BA9D2259FD5B0013A149 /* MaxNumberOfDots.swift */,
 			);
 			name = public;
 			path = Endless/Classes/public;
@@ -434,7 +431,6 @@
 				159A805A225A074E0046B195 /* IndicatorProtocol.swift in Sources */,
 				159A805C225A085C0046B195 /* IndicatorCellProtocol.swift in Sources */,
 				989E85E803C12AF1DB89C7C82A5D8811 /* IndicatorCellState.swift in Sources */,
-				1502BA9E2259FD5B0013A149 /* MaxNumberOfDots.swift in Sources */,
 				1502BAA0225A041F0013A149 /* Constants.swift in Sources */,
 				1502BAA2225A057A0013A149 /* UICollectionView+VisibleCells.swift in Sources */,
 			);

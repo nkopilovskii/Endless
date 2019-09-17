@@ -76,15 +76,19 @@ extension IndicatorCell {
         
     private func updateDotLayer(for state: IndicatorCellState) {
         switch self.state {
-            case .unselected:
-                self.dotLayer.fillColor = (configuration?.unselectedDotColor ?? .lightGray).cgColor
-                self.dotLayer.transform = CATransform3DMakeScale(0.6, 0.6, 0.6)
             case .selected:
                 self.dotLayer.fillColor = (configuration?.selectedDotColor ?? .darkGray).cgColor
-                self.dotLayer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+                self.dotLayer.transform = CATransform3DMakeScale(1, 1, 1)
+            case .unselected:
+              self.dotLayer.fillColor = (configuration?.unselectedDotColor ?? .lightGray).cgColor
+              self.dotLayer.transform = CATransform3DMakeScale(0.8, 0.8, 0.8)
+            case .medium:
+                self.dotLayer.fillColor = (configuration?.unselectedDotColor ?? .lightGray).cgColor
+                self.dotLayer.transform = CATransform3DMakeScale(0.6, 0.6, 0.6)
             case .small:
                 self.dotLayer.fillColor = (configuration?.unselectedDotColor ?? .lightGray).cgColor
-                self.dotLayer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)
-        }
+                self.dotLayer.transform = CATransform3DMakeScale(0.4, 0.4, 0.4)
+          
+      }
     }
 }

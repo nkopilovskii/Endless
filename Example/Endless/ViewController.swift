@@ -10,7 +10,7 @@ class ViewController: UIViewController {
         exampleCollectionView?.delegate = self
         exampleCollectionView?.dataSource = self
         let configuration = Endless.Configuration(numberOfDots: 10,
-                                                  maxNumberOfDots: .five,
+                                                  maxNumberOfDots: 7,
                                                   selectedDotColor: UIColor(named: "Selected")!,
                                                   unselectedDotColor: .lightGray,
                                                   dotSize: 10,
